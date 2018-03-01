@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Photo Sphere Viewer</title>
+		<meta name="viewport" content="initial-scale=1.0" />
+		<script src="js/three.min.js"></script>
+		<script src="js/photo-sphere-viewer.min.js"></script>
+		<style>
+			html, body {
+				background: #5B5D72;
+				margin: 0;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}
+
+			#container {
+				width: 100%;
+				height: 95%;
+			}
+			.right{
+				float: right;
+				width: 90px;
+				height: 100%;
+				border: 3px solid #FC9CAB;
+				border-bottom: 6px solid #FC9CAB;
+			}
+			.center{
+				height: 4%;
+				width: 210px;
+				margin: 0px auto;
+			}
+			.left{
+				float: left;
+				width: 90px;
+				height: 100%;
+				border: 3px solid #AD9FF9;
+				border-bottom: 6px solid #AD9FF9;
+				font-size: 23px;
+				text-align: center;
+				color: white;
+				background: #AD9FF9;
+			}
+			.right{
+				float: right;
+				width: 90px;
+				height: 100%;
+				border: 3px solid #FC9CAB;
+				border-bottom: 6px solid #FC9CAB;
+				background: #5B5D72;
+				color: #FC9CAB;
+				font-size: 23px;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="center">
+			<div class="left">
+				out
+			</div>
+			<a href="in.html"><div class="right">
+				In
+			</div></a>
+		</div>
+		
+		<div id="container"></div>
+
+		<script>
+			var div = document.getElementById('container');
+			var PSV = new PhotoSphereViewer({
+					panorama: 'img/2.jpg',
+					container: div,
+					time_anim: 3000,
+					navbar: true,
+					min_fov:120,
+					max_fov:120,
+					zoome_level:100,
+					navbar_style: {
+						backgroundColor: 'rgba(58, 67, 77, 0.7)'
+					},
+				});
+		</script>
+	</body>
+
+</html>
